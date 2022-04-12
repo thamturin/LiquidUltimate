@@ -132,7 +132,7 @@ object LiquidBounce {
         if (hasForge()) {
             BlocksTab()
             ExploitsTab()
-            HeadsTab()
+//            HeadsTab()
         }
 
         // Register capes service
