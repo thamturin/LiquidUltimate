@@ -7,7 +7,7 @@ package net.ccbluex.liquidbounce.features.module
 
 import net.ccbluex.liquidbounce.LiquidBounce
 import net.ccbluex.liquidbounce.event.Listenable
-import net.ccbluex.liquidbounce.ui.client.hud.element.elements.Notification
+import net.ccbluex.liquidbounce.ui.client.hud.Notification
 import net.ccbluex.liquidbounce.utils.MinecraftInstance
 import net.ccbluex.liquidbounce.utils.render.ColorUtils.stripColor
 import net.ccbluex.liquidbounce.value.Value
@@ -21,6 +21,10 @@ open class Module : MinecraftInstance(), Listenable {
     var name: String
     var description: String
     var category: ModuleCategory
+    var animation: Float = 0f
+    var animationY: Float = 0f
+
+
     var keyBind = Keyboard.CHAR_NONE
         set(keyBind) {
             field = keyBind

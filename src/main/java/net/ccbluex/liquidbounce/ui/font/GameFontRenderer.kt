@@ -58,9 +58,9 @@ class GameFontRenderer(font: Font) : FontRenderer(Minecraft.getMinecraft().gameS
         val rainbow = RainbowFontShader.isInUse
 
         if (shadow) {
-            glUseProgram(0)
-
-            drawText(currentText, x + 1f, currY + 1f, Color(0, 0, 0, 150).rgb, true)
+//            glUseProgram(0)
+//            drawText(currentText,  x + 0.3f, currY + 0.3f,  Color(0, 0, 0, Color(color).alpha).rgb, false, false)
+            drawText(currentText, x + 0.3f, currY + 0.3f, Color(0, 0, 0, 100).rgb, true)
         }
 
         return drawText(currentText, x, currY, color, false, rainbow)

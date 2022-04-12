@@ -25,13 +25,18 @@ public class Fonts extends MinecraftInstance {
     @FontDetails(fontName = "Minecraft Font")
     public static final FontRenderer minecraftFont = mc.fontRendererObj;
     private static final HashMap<FontInfo, FontRenderer> CUSTOM_FONT_RENDERERS = new HashMap<>();
-    @FontDetails(fontName = "Roboto Medium", fontSize = 35)
+    @FontDetails(fontName = "Helvetica Neue", fontSize = 35)
     public static GameFontRenderer font35;
-    @FontDetails(fontName = "Roboto Medium", fontSize = 40)
+    @FontDetails(fontName = "Helvetica Neue", fontSize = 40)
     public static GameFontRenderer font40;
-    @FontDetails(fontName = "Roboto Bold", fontSize = 180)
+    @FontDetails(fontName = "Helvetica Neue", fontSize = 180)
     public static GameFontRenderer fontBold180;
-
+    @FontDetails(fontName = "Tahu!", fontSize = 180)
+    public static GameFontRenderer logo180;
+    @FontDetails(fontName = "Tahu!", fontSize = 80)
+    public static GameFontRenderer logo80;
+    @FontDetails(fontName = "Tahu!", fontSize = 80)
+    public static GameFontRenderer logo40;
     public static void loadFonts() {
         long l = System.currentTimeMillis();
 
@@ -39,9 +44,13 @@ public class Fonts extends MinecraftInstance {
 
         downloadFonts();
 
-        font35 = new GameFontRenderer(getFont("Roboto-Medium.ttf", 35));
-        font40 = new GameFontRenderer(getFont("Roboto-Medium.ttf", 40));
-        fontBold180 = new GameFontRenderer(getFont("Roboto-Bold.ttf", 180));
+        font35 = new GameFontRenderer(getFont("hel.ttf", 35));
+        font40 = new GameFontRenderer(getFont("hel.ttf", 40));
+        fontBold180 = new GameFontRenderer(getFont("hel.ttf", 180));
+        logo80 = new GameFontRenderer(getFont("Tahu!.ttf", 80));
+        logo40 = new GameFontRenderer(getFont("Tahu!.ttf", 40));
+        logo180 = new GameFontRenderer(getFont("Tahu!.ttf", 180));
+
 
         try {
             CUSTOM_FONT_RENDERERS.clear();
@@ -82,11 +91,11 @@ public class Fonts extends MinecraftInstance {
 
     private static void downloadFonts() {
         try {
-            final File outputFile = new File(LiquidBounce.fileManager.fontsDir, "roboto.zip");
+            final File outputFile = new File(LiquidBounce.fileManager.fontsDir, "fonts.zip");
 
             if (!outputFile.exists()) {
                 ClientUtils.getLogger().info("Downloading fonts...");
-                HttpUtils.download(LiquidBounce.CLIENT_CLOUD + "/fonts/Roboto.zip", outputFile);
+                HttpUtils.download(LiquidBounce.CLIENT_CLOUD + "/fonts.zip", outputFile);
                 ClientUtils.getLogger().info("Extract fonts...");
                 extractZip(outputFile.getPath(), LiquidBounce.fileManager.fontsDir.getPath());
             }
