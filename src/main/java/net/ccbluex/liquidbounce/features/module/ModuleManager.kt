@@ -175,7 +175,8 @@ class ModuleManager : Listenable {
             ResourcePackSpoof::class.java,
             NoSlowBreak::class.java,
             PortalMenu::class.java,
-            Disabler::class.java
+            Disabler::class.java,
+            VerusFly::class.java
         )
 
         registerModule(NoScoreboard)
